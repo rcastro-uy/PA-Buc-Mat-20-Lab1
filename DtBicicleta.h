@@ -20,13 +20,6 @@ class DtBicicleta: public DtVehiculo{
         void setcantCambios(TipoBici);
 
         ~DtBicicleta();
-        float darPrecioViaje(int duracion)
-
-
-
-
-
-
-
+        float darPrecioViaje(int,int);
 };
 #endif
