@@ -12,7 +12,7 @@ TipoBici Bicicleta::getTipoBici(){
 void Bicicleta::setCantCambios(int cc){
 	this->cantCambios=cc;
 }
-int Bicicleta::getCAntCambios(){
+int Bicicleta::getCantCambios(){
 	return this->cantCambios;
 }
 
