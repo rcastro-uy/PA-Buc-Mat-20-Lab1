@@ -1,5 +1,5 @@
 main: DtBicicleta.o DtMonopatin.o DtVehiculo.o DtViaje.o DtViajeBase.o Monopatin.o Bicicleta.o Vehiculo.o Viaje.o DtFecha.o Usuario.o main.o
-    g++ DtBicicleta.o DtMonopatin.o DtVehiculo.o DtViaje.o DtViajeBase.o Monopatin.o Bicicleta.o Vehiculo.o Viaje.o DtFecha.o Usuario.o main.o -o grin
+	g++ DtBicicleta.o DtMonopatin.o DtVehiculo.o DtViaje.o DtViajeBase.o Monopatin.o Bicicleta.o Vehiculo.o Viaje.o DtFecha.o Usuario.o main.o -o grin
 
 DtBicicleta.o: DtBicicleta.cpp
 

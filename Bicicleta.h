@@ -1,6 +1,5 @@
 #ifndef Bicicleta.h
 #define Bicicleta.h
-
 #include "TipoBici.h"
 
 using namespace std;
