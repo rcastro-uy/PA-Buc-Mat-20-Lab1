@@ -1,8 +1,6 @@
-#ifndef DtMonopatin
-#define DtMonopatin
-
+#ifndef DTMONOPATIN
+#define DTMONOPATIN
 #include "DtVehiculo.h"
-
 using namespace std;
 
 class DtMonopatin : public DtVehiculo{
@@ -15,7 +13,6 @@ class DtMonopatin : public DtVehiculo{
         bool getTieneLuces();
         void setTieneLuces(bool);
 
-        float darPrecioViaje();
         ~DtMonopatin();
 };
 

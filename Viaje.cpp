@@ -1,21 +1,26 @@
 #include "Viaje.h"
 
 Viaje::Viaje(){}
+Viaje::Viaje(int d,int n,DtFecha f){
+	this->duracion=d;
+	this->distancia=n;
+	this->fecha=f;
+}
 Viaje::~Viaje(){}
 
-void Viaje::setDuracion(String d){
-	this->duracion=c;
+void Viaje::setDuracion(int d){
+	this->duracion=d;
 }
-String Viaje::getDuracion(){
+int Viaje::getDuracion(){
 	return this->duracion;
 }
-void Viaje::setDistancia(String n){
+void Viaje::setDistancia(int n){
 	this->distancia=n;
 }
-String Usuario::getDistancia(){
+int Viaje::getDistancia(){
 	return this->distancia;
 }
-void VIaje::setFecha(DtFecha f){
+void Viaje::setFecha(DtFecha f){
 	this->fecha=f;
 }
 DtFecha Viaje::getFecha(){

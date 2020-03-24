@@ -1,18 +1,24 @@
-
 #include "Usuario.h"
+#include<iostream>
+using namespace std;
 
 Usuario::Usuario(){}
+Usuario::Usuario(string c,string n,DtFecha f){
+	this->cedula=c;
+	this->nombre=n;
+	this->fechaIngreso=f;
+}
 Usuario::~Usuario(){}
-void Usuario::setCedula(String c){
+void Usuario::setCedula(string c){
 	this->cedula=c;
 }
-String Usuario::getCedula(){
+string Usuario::getCedula(){
 	return this->cedula;
 }
-void Usuario::setNombre(String n){
+void Usuario::setNombre(string n){
 	this->nombre=n;
 }
-String Usuario::getNombre(){
+string Usuario::getNombre(){
 	return this->nombre;
 }
 void Usuario::setFechaIngreso(DtFecha f){

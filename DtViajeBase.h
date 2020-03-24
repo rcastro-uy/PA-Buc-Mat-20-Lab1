@@ -1,28 +1,27 @@
-#ifndef DtViajeBase
-#define DtViajeBase
-
+#ifndef DTVIAJEBASE
+#define DTVIAJEBASE
 #include "DtFecha.h"
-
+#include<iostream>
 using namespace std;
 
-class ViajeBase{
-
+class DtViajeBase{
     private:
-
         int duracion;
         int distancia;
         DtFecha fecha;
 
     public: 
+        DtViajeBase();
+        DtViajeBase(int,int,DtFecha);
+        ~DtViajeBase();
 
-        DtViajeBase();   
+        void setDuracion(int);
+        int getDuracion();
 
-        int getDuracion(); 
-
+        void setDistancia(int);
         int getDistancia();
-        
-		DtFecha getFecha();
 
-        ~DtViajeBase(); 
+        void setFecha(DtFecha);
+		DtFecha getFecha();
 };
 #endif 

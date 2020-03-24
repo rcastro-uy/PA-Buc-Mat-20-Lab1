@@ -1,6 +1,5 @@
-#ifndef Vehiculo
-#define Vehiculo
-
+#ifndef DTVEHICULO
+#define DTVEHICULO
 using namespace std;
 
 class DtVehiculo{
@@ -14,7 +13,6 @@ class DtVehiculo{
 		int getNroSerie();
 		float getPorcentajeBateria();
 		float getPrecioBase();
-		float darPrecioViaje(int,int);
 
 };
 #endif

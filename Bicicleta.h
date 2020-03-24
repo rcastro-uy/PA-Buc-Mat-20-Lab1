@@ -1,8 +1,6 @@
-#ifndef Bicicleta
-#define Bicicleta
-
+#ifndef BICICLETA
+#define BICICLETA
 #include "TipoBici.h"
-
 using namespace std;
 
 class Bicicleta{
@@ -11,6 +9,7 @@ class Bicicleta{
 		int cantCambios;
 	public:
 		Bicicleta();
+		Bicicleta(TipoBici,int);
 		~Bicicleta();
 		void setTipo(TipoBici);
 		TipoBici getTipo();
