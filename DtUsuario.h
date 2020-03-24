@@ -1,5 +1,5 @@
-#ifndef DtUsuario.h
-#define DtUsuario.h
+#ifndef DtUsuario
+#define DtUsuario
 #include "DtFecha.h"
 
 using namespace std;

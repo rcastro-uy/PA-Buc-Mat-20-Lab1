@@ -1,5 +1,5 @@
-#ifndef Vehiculo.h
-#define Vehiculo.h
+#ifndef Vehiculo
+#define Vehiculo
 
 using namespace std;
 
@@ -17,4 +17,4 @@ class DtVehiculo{
 		float darPrecioViaje(int,int);
 
 };
-
+#endif
