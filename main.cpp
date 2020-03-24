@@ -20,25 +20,6 @@ struct coleccionUsuarios{
 	int tope;
 };
 
-bool cedulaVerif(int a){
-    int arr[7];
-    int res, aux;
-    for(int i=7;i>=0;i--){
-        arr[i] = a%10;
-        a = a/10;
-    }
-    res = arr[0]*2 + arr[1]*9 + arr[2]*8 + arr[3]*7 + arr[4]*6 + arr[5]*3 + arr[6]*4;
-    aux=res;
-    while(aux%10 != 0){
-        aux++;
-    }
-    aux = aux-res;
-    if(aux == arr[7])
-        return true;
-    else
-        return false;
-}
-
 /*void registrarUsuario(){
     string ci, nombre;
     cout << endl << "Cedula: ";
