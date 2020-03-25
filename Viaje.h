@@ -1,8 +1,6 @@
-#ifndef Viaje
-#define Viaje
-
+#ifndef VIAJE
+#define VIAJE
 #include "DtFecha.h"
-
 using namespace std;
 
 class Viaje{
@@ -16,6 +14,8 @@ class Viaje{
     public:
 
         Viaje();
+        Viaje(int,int,DtFecha);
+        ~Viaje();
 
         void setDuracion(int);
         int getDuracion();
@@ -25,15 +25,5 @@ class Viaje{
 
         void setFecha(DtFecha);
 		DtFecha getFecha();
-        
-        ~Viaje();
-
-
-
 };
-
-
-
-
-
 #endif

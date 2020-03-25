@@ -1,23 +1,30 @@
+#include "DtFecha.h"
+
 DtFecha::DtFecha(){}
+DtFecha::DtFecha(int dia,int mes,int anio){
+    this->dia=dia;
+    this->mes=mes;
+    this->anio=anio;
+}
 DtFecha::~DtFecha(){}
 
-void DtFecha::setDia(int a){
-    this->dia=a;
+void DtFecha::setDia(int dia){
+    this->dia=dia;
 }
 int DtFecha::getDia(){
     return this->dia;
 }
 
-void DtFecha::setMes(int a){
-    this->mes=a;
+void DtFecha::setMes(int mes){
+    this->mes=mes;
 }
 int DtFecha::getMes(){
     return this->mes;
 }
 
-void DtFecha::setAnio(int a){
-    this->anio=a;
+void DtFecha::setAnio(int anio){
+    this->anio=anio;
 }
 int DtFecha::getAnio(){
-    return this->Anio;
+    return this->anio;
 }

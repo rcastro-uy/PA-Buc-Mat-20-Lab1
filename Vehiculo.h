@@ -1,6 +1,6 @@
-#ifndef Vehiculo.h
-#define Vehiculo.h
-
+#ifndef VEHICULO
+#define VEHICULO
+#include "Viaje.h"
 using namespace std;
 
 class Vehiculo{
@@ -11,16 +11,16 @@ class Vehiculo{
 
 	public:
 		Vehiculo();
+		Vehiculo(int,float,float);
 		~Vehiculo();
 
 		void setNroSerie(int);
 		int getNroSerie();
 		void setPorcentajeBateria(float);
-		float getPorcentaBateria();
+		float getPorcentajeBateria();
 		void setPrecioBase(float);
 		float getPrecioBase();
-
+		
 		float darPrecioViaje(int,int);
 };
-
 #endif

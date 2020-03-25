@@ -1,4 +1,3 @@
-
 #include "DtVehiculo.h"
 
 DtVehiculo::DtVehiculo(){}

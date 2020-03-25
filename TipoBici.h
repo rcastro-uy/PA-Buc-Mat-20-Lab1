@@ -1,6 +1,4 @@
-#ifndef TipoBici
-#define TipoBici
-
-enum TipoBici {PASEO,MONTAÑA};
-
+#ifndef TIPOBICI
+#define TIPOBICI
+enum TipoBici{PASEO,MONTANIA};
 #endif

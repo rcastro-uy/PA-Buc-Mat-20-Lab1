@@ -1,9 +1,7 @@
-#ifndef DtBicicleta
-#define DtBicicleta
-
+#ifndef DTBICICLETA
+#define DTBICICLETA
 #include "DtVehiculo.h"
 #include "TipoBici.h"
-
 using namespace std;
 
 class DtBicicleta: public DtVehiculo{
@@ -16,8 +14,8 @@ class DtBicicleta: public DtVehiculo{
         
         TipoBici getTipoBici();
         void setTipoBici(TipoBici);
-        int getcantCambios();
-        void setcantCambios(TipoBici);
+        int getCantCambios();
+        void setCantCambios(int);
 
         ~DtBicicleta();
         float darPrecioViaje(int,int);

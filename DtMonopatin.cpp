@@ -1,8 +1,11 @@
 
 #include "DtMonopatin.h"
 
-DtMonopatin::DtMonopatin():Vehiculo(){}
-DtMonopatin::~Bicicleta():~Vehiculo(){}
+DtMonopatin::DtMonopatin(){}
+DtMonopatin::DtMonopatin(bool b){
+    this->tieneLuces=b;
+}
+DtMonopatin::~DtMonopatin(){}
 
 bool DtMonopatin::getTieneLuces(){
     if(tieneLuces){
@@ -12,15 +15,6 @@ bool DtMonopatin::getTieneLuces(){
     }
 }
 
-void DtMonopatin::setTienLuces(bool b){
+void DtMonopatin::setTieneLuces(bool b){
     this->tieneLuces=b;
-}
-
-float DtMonopatin::darPrecioViaje():Vehiculo(){
-    int precio;
-    if(this->tieneLuces){
-        precio = 0.5 * duracion + distancia * precioBase;
-    }else{
-        precio = distancia * precioBase;
-    }
 }

@@ -1,6 +1,5 @@
-#ifndef Monopatin.h
-#define Monopatin.h
-
+#ifndef MONOPATIN
+#define MONOPATIN
 using namespace std;
 
 class Monopatin{

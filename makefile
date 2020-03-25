@@ -1,5 +1,5 @@
 main: DtBicicleta.o DtMonopatin.o DtVehiculo.o DtViaje.o DtViajeBase.o Monopatin.o Bicicleta.o Vehiculo.o Viaje.o DtFecha.o Usuario.o main.o
-    g++ DtBicicleta.o DtMonopatin.o DtVehiculo.o DtViaje.o DtViajeBase.o Monopatin.o Bicicleta.o Vehiculo.o Viaje.o DtFecha.o Usuario.o main.o -o grin
+	g++ DtBicicleta.o DtMonopatin.o DtVehiculo.o DtViaje.o DtViajeBase.o Monopatin.o Bicicleta.o Vehiculo.o Viaje.o DtFecha.o Usuario.o main.o -o labo
 
 DtBicicleta.o: DtBicicleta.cpp
 
@@ -21,9 +21,9 @@ Viaje.o: Viaje.cpp
 
 DtFecha.o: DtFecha.cpp
 
-Usuario.o: usuario.cpp
+Usuario.o: Usuario.cpp
 
 main.o: main.cpp
 
 clean:
-	rm -rf *.o grin
+	rm -rf *.o labo

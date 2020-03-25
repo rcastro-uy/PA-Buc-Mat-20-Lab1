@@ -1,8 +1,7 @@
-
 #include "Monopatin.h"
 
-Monopatin::Monopatin():Vehiculo(){}
-Monopatin::~Monopatin():~Vehiculo(){}
+Monopatin::Monopatin(){}
+Monopatin::~Monopatin(){}
 void Monopatin::setTieneLuces(bool f){
 	this->tieneLuces=f;
 }

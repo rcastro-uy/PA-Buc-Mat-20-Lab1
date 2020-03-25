@@ -1,5 +1,6 @@
-#ifndef DtFecha
-#define DtFecha
+#ifndef DTFECHA
+#define DTFECHA
+
 class DtFecha{
     private:
         int dia;
@@ -7,6 +8,7 @@ class DtFecha{
         int anio;
     public: 
         DtFecha();
+        DtFecha(int,int,int);
         ~DtFecha();
 
         void setDia(int);
@@ -18,4 +20,4 @@ class DtFecha{
         void setAnio(int);
         int getAnio(); 
 };
-#endif 
+#endif
