@@ -32,32 +32,6 @@ void ingresarViaje(string ci,int nroSerieVehiculo,DtViajeBase& viaje);
 //DtVehiculo** obtenerVehiculos(int& cantVehiculos);
 
 
-//OPERACION A
-void registrarSocio();
-void registrarSocio(string,string,DtMascota&);
-//OPERACION B
-void agregarMascota();
-void agregarMascota(string,DtMascota&);
-//OPERACION C
-void ingresarConsulta();
-void ingresarConsulta(string,string,DtFecha&);
-//OPERACION D
-void verConsultasAntesDeFecha();
-DtConsulta** verConsultasAntesDeFecha(DtFecha&,string,int&);
-//OPERACION E
-void eliminarSocio();
-void eliminarSocio(string ci);
-//OPERACION F
-void obtenerMascotas();
-DtMascota** obtenerMascotas(string,int&);
-//OPERACIONES AUXILIARES
-void existeSocio(string);
-Socio* obtenerSocio(string);
-void menu();
-void cargarDatos();
-
-
-
 // ingresarViaje mi funcion
 
 void ingresarViaje(string ci, int nroSerieVehiculo, DtViajeBase& viaje){
