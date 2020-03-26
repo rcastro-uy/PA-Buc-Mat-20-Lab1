@@ -2,6 +2,7 @@
 #define DTVIAJE
 #include "DtVehiculo.h"
 #include "DtViajeBase.h"
+using namespace std;
 
 class DtViaje: public DtViajeBase{
     private:
@@ -16,5 +17,7 @@ class DtViaje: public DtViajeBase{
         float getPrecioTotal();
         void setVehiculo(DtVehiculo);
         DtVehiculo getVehiculo();
+
+        friend ostream& operator <<(ostream&,const DtViaje&);
 };
 #endif

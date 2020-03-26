@@ -26,23 +26,27 @@ struct coleccionUsuarios{
 
 
 //Prototipos
-//void ingresarViaje();
+void ingresarViaje();
 //void ingresarViaje(string ci,int nroSerieVehiculo,DtViajeBase& viaje);
 
 
 
 // ingresarViaje
 
-/*
+
 void ingresarViaje(){
 	string ci;
 	int nroSerie;
 	DtViajeBase viaje;
+	int dia, mes, anio;
 	cout << "Ingrese su cedula: ";
 	cin >> ci;
 	cout << "Ingrese numero de serie del vehiculo" << endl;
 	cin >> nroSerie;
-	cout << 
+	cout <<  "Ingrese la fecha del viaje"
+	cin >> dia;
+	cin >> mes;
+	cin >> año;
 
 	try{
 		if(existeUsuario(ci) && existeVehiculo(nroSerie)){
@@ -62,6 +66,7 @@ void ingresarViaje(){
 
 }
 
+/*
 void ingresarViaje(string ci, int nroSerieVehiculo, DtViajeBase& viaje){
 
 

@@ -1,5 +1,6 @@
 #include "DtViaje.h"
 #include "DtVehiculo.h"
+using namespace std;
 
     DtViaje::DtViaje(){}
     DtViaje::DtViaje(float precioTotal,DtVehiculo vehiculo){
@@ -19,4 +20,9 @@
     }
     DtVehiculo DtViaje::getVehiculo(){
         return this->vehiculo;
+    }
+
+    ostream& operator <<(ostream& sal,const DtViaje& v){
+        cout << v.precioTotal;
+        return sal;
     }
