@@ -27,7 +27,7 @@ struct coleccionUsuarios{
 
 //Prototipos
 void ingresarViaje();
-//void ingresarViaje(string ci,int nroSerieVehiculo,DtViajeBase& viaje);
+void ingresarViaje(string ci,int nroSerie,DtViajeBase& viajeB);
 
 
 
@@ -37,46 +37,53 @@ void ingresarViaje();
 void ingresarViaje(){
 	string ci;
 	int nroSerie;
-	DtViajeBase viaje;
-	int dia, mes, anio;
+	DtViajeBase viajeB;
+	DtFecha fecha;
+	int dia, mes, anio, duracion, distancia;
 	cout << "Ingrese su cedula: ";
 	cin >> ci;
 	cout << "Ingrese numero de serie del vehiculo" << endl;
 	cin >> nroSerie;
-	cout <<  "Ingrese la fecha del viaje"
-	cin >> dia;
-	cin >> mes;
-	cin >> año;
-
 	try{
-		if(existeUsuario(ci) && existeVehiculo(nroSerie)){
-
-
-
+		existeUsuario(ci);
+		existeVehiculo(nroSerie);
+		cout <<  "Ingrese dia: ";
+		cin >> dia;
+		cout << "Ingrese mes: ";
+		cin >> mes;
+		cout << "Ingrese anio: ";
+		cin >> anio;
+		fecha=DtFecha(dia,mes,anio);
+		cout << "Ingrese la duracion del viaje: ";
+		cin >> duracion;
+		cout << "Ingrese la distancia del viaje: ";
+		cin >> distancia;
+		if(duracion > 0 && distancia > 0){
+			viajeB=DtViajeBase(duracion,distancia,fecha);
+			ingresarViaje(ci,nroSerie,viajeB);
+		}else{
+			cout << "La distancia y duracion deben ser mayor a 0";
 		}
 
+	}catch(invalid_argument& e){
+		cout << e.what() << endl;
+	}
+}
+
+void ingresarViaje(string ci, int nroSerieVehiculo, DtViajeBase& viajeB){
+	try{
+		
+		Viaje
 
 
 	}catch(){
 
 	}
-
-
-
-
+	Usuario* usuario = obtenerUsuario(ci);
+	Vehiculo* vehiculo = obtenerVehiculo(nroSerie);
+	Viaje* viaje = new Viaje(duracion,distancia,viaje)
+	usuario->ingresarViaje()
 }
-
-/*
-void ingresarViaje(string ci, int nroSerieVehiculo, DtViajeBase& viaje){
-
-
-	if(duracion > 0 && distancia > 0)
-
-
-	if()
-
-}
-*/
 
 //REVISADO EL MAIN
 
