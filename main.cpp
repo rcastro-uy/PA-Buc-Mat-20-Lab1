@@ -72,17 +72,25 @@ void ingresarViaje(){
 
 void ingresarViaje(string ci, int nroSerieVehiculo, DtViajeBase& viajeB){
 	try{
+		Usuario* usuario = obtenerUsuario(ci);
+		Vehiculo* vehiculo = obtenerVehiculo(nroSerie);
 		
-		Viaje
+
+
+
+
+
+
+
+		usuario->ingresarViaje()
+		DtViaje* dtv = new DtViaje(duracion,distancia,viajeB);
+		Viaje* v = new Viaje(dtv.get)
 
 
 	}catch(){
 
 	}
-	Usuario* usuario = obtenerUsuario(ci);
-	Vehiculo* vehiculo = obtenerVehiculo(nroSerie);
-	Viaje* viaje = new Viaje(duracion,distancia,viaje)
-	usuario->ingresarViaje()
+
 }
 
 //REVISADO EL MAIN
