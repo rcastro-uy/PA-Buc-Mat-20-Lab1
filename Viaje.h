@@ -25,5 +25,7 @@ class Viaje{
 
         void setFecha(DtFecha);
 		DtFecha getFecha();
+
+        Vehiculo* getVehiculo();
 };
 #endif

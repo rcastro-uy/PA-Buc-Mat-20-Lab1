@@ -29,8 +29,6 @@ struct coleccionUsuarios{
 //Prototipos
 void ingresarViaje();
 void ingresarViaje(string ci,int nroSerie,DtViajeBase& viajeB);
-float darPrecioViaje(int duracion,int distancia);
-
 
 
 // ingresarViaje
@@ -77,12 +75,6 @@ void ingresarViaje(string ci, int nroSerieVehiculo, DtViajeBase& viajeB){
 	try{
 		Usuario* usuario = obtenerUsuario(ci);
 		Vehiculo* vehiculo = obtenerVehiculo(nroSerie);
-		
-
-
-
-
-
 		usuario->ingresarViaje()
 		DtViaje* dtv = new DtViaje(darPrecioViaje(viajeB.getDuracion(),viajeB.getDistancia()),vehiculo);
 		Viaje* v = new Viaje(dtv.getDuracion(),dtv.getDistancia(),viajeB.getFecha());

@@ -1,5 +1,6 @@
 #ifndef MONOPATIN
 #define MONOPATIN
+#include "Vehiculo.h"
 using namespace std;
 
 class Monopatin: public Vehiculo{

@@ -26,3 +26,7 @@ void Viaje::setFecha(DtFecha f){
 DtFecha Viaje::getFecha(){
 	return this->fecha;
 }
+
+Vehiculo* Viaje::getVehiculo(){
+	return this->vehiculo;
+}
