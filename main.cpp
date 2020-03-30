@@ -5,6 +5,7 @@
 #include "DtMonopatin.h"
 #include "DtVehiculo.h"
 #include "DtViajeBase.h"
+#include "DtViaje.h"
 #include "Monopatin.h"
 #include "TipoBici.h"
 #include "Usuario.h"
@@ -28,6 +29,7 @@ struct coleccionUsuarios{
 //Prototipos
 void ingresarViaje();
 void ingresarViaje(string ci,int nroSerie,DtViajeBase& viajeB);
+float darPrecioViaje(int duracion,int distancia);
 
 
 
@@ -59,6 +61,7 @@ void ingresarViaje(){
 		cout << "Ingrese la distancia del viaje: ";
 		cin >> distancia;
 		if(duracion > 0 && distancia > 0){
+			darPrecioViaje();
 			viajeB=DtViajeBase(duracion,distancia,fecha);
 			ingresarViaje(ci,nroSerie,viajeB);
 		}else{
@@ -80,11 +83,9 @@ void ingresarViaje(string ci, int nroSerieVehiculo, DtViajeBase& viajeB){
 
 
 
-
-
 		usuario->ingresarViaje()
-		DtViaje* dtv = new DtViaje(duracion,distancia,viajeB);
-		Viaje* v = new Viaje(dtv.get)
+		DtViaje* dtv = new DtViaje(darPrecioViaje(viajeB.getDuracion(),viajeB.getDistancia()),vehiculo);
+		Viaje* v = new Viaje(dtv.getDuracion(),dtv.getDistancia(),viajeB.getFecha());
 
 
 	}catch(){
@@ -117,7 +118,7 @@ int main(){
 				break;
 			case 2: //agregarVehiculo(vehiculo);
 				break;
-			case 3: //ingresarViaje(ci,nroSerieVehiculo,viaje);
+			case 3: ingresarViaje();
 				break;
 			case 4: //verViajesAntesDeFecha(fecha,ci,cantViajes);
 				break;

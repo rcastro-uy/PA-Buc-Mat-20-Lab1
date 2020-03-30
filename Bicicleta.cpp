@@ -19,3 +19,8 @@ void Bicicleta::setCantCambios(int cc){
 int Bicicleta::getCantCambios(){
 	return this->cantCambios;
 }
+
+float Bicicleta::darPrecioViaje(int duracion, int distancia){
+	darPrecioViaje = this->getPrecioBase() * distancia;
+	return darPrecioViaje;
+}
