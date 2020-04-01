@@ -14,6 +14,7 @@ class DtMonopatin : public DtVehiculo{
         void setTieneLuces(bool);
 
         ~DtMonopatin();
+        friend ostream& operator <<(ostream&,DtMonopatin&);
 };
 
 #endif

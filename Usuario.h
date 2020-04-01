@@ -1,8 +1,9 @@
 #ifndef USUARIO
 #define USUARIO
-#include <iostream>
+#include<iostream>
 #include "DtFecha.h"
-
+#include "Viaje.h"
+#define MAX_VIAJES 100
 using namespace std;
 
 class Usuario{
@@ -10,6 +11,8 @@ class Usuario{
 		string cedula;
 		string nombre;
 		DtFecha fechaIngreso;
+		Viaje* viajes[MAX_VIAJES];
+		int topeViajes;
 	public:
 		Usuario();
 		Usuario(string,string,DtFecha);
@@ -20,6 +23,13 @@ class Usuario{
 		string getNombre();
 		void setFechaIngreso(DtFecha);
 		DtFecha getFechaIngreso();
+		int getTopeViajes();
+
+		void agregarViaje(Viaje*);
+		Viaje** obtenerViaje();
+
+		friend ostream& operator <<(ostream&,Usuario&);
+
 
 };
 

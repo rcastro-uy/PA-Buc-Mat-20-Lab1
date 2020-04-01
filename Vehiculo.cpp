@@ -4,7 +4,7 @@ Vehiculo::Vehiculo(){}
 Vehiculo::Vehiculo(int nroSerie,float porcentajeBateria,float precioBase){
 	this->nroSerie=nroSerie;
 	this->porcentajeBateria=porcentajeBateria;
-
+	this->precioBase=precioBase;
 }
 Vehiculo::~Vehiculo(){}
 void Vehiculo::setNroSerie(int nroSerie){
@@ -25,6 +25,3 @@ void Vehiculo::setPrecioBase(float precioBase){
 float Vehiculo::getPrecioBase(){
 	return this->precioBase;
 }
-//falta darPrecio
-
-

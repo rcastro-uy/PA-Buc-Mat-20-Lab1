@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <iostream>
+#include <stdexcept> //funcion invaid_argument
+#include <stdlib.h> //funcion system
 #include "Bicicleta.h"
 #include "DtBicicleta.h"
 #include "DtFecha.h"
@@ -10,16 +14,13 @@
 #include "Vehiculo.h"
 #include "Viaje.h"
 #include "DtViaje.h"
-#include <stdio.h>
-#include <iostream>
-#include <ctime>
 
 using namespace std;
-#define MAX_USUARIOS 30
+#define MAX_USER 30
 #define MAX_VEHICULOS 100
 
 struct{
-	Usuario* usuarios[MAX_USUARIOS];
+	Usuario* usuarios[MAX_USER];
 	int tope;
 } coleccionUsuarios;
 
@@ -27,6 +28,21 @@ struct{
 	Vehiculo* vehiculos[MAX_VEHICULOS];
 	int tope;
 } coleccionVehiculos;
+
+void existeUsuario(string ci);
+Usuario* obtenerUsuario (string);
+void ingresarViaje();
+void ingresarViaje(string ci,int nroSerie,DtViajeBase& viajeB);
+void existeVehiculo(int);
+void porcentajeValido(float);
+void precioBaseValido(float);
+void valorPositivo(int);
+void fechaValida(DtFecha,string);
+
+
+
+
+
 
 
 //Prototipos
@@ -37,7 +53,7 @@ void existeVehiculo(int);
 Usuario* obtenerUsuario (string);
 
 void ingresarViaje();
-void ingresarViaje(string ci,int nroSerie,DtViajeBase& viajeB);
+void ingresarViaje(string ci,int nroSerieVehiculo,DtViajeBase& viaje);
 
 
 void precioBaseValido(float pb){
@@ -87,67 +103,99 @@ Usuario* obtenerUsuario(string ci){ //falta probar
 
 void ingresarViaje(){
 	string ci;
-	int nroSerie;
-	DtViajeBase viajeB;
-	DtFecha fecha;
+	int nroSerieVehiculo;
 	int dia, mes, anio, duracion, distancia;
 	cout << "Ingrese su cedula: ";
 	cin >> ci;
 	cout << "Ingrese numero de serie del vehiculo" << endl;
-	cin >> nroSerie;
+	cin >> nroSerieVehiculo;
 	try{
 
 		existeUsuario(ci);
+		// Comprobar si existe el Usuario
+
+		existeVehiculo(nroSerieVehiculo);
+        // Comprobar si existe el vehiculo
 		
-		cout <<  "Ingrese dia: ";
+		cout << "Ingrese dia: ";
 		cin >> dia;
 		cout << "Ingrese mes: ";
 		cin >> mes;
 		cout << "Ingrese anio: ";
 		cin >> anio;
-		fecha=DtFecha(dia,mes,anio);
 		cout << "Ingrese la duracion del viaje: ";
 		cin >> duracion;
 		cout << "Ingrese la distancia del viaje: ";
 		cin >> distancia;
 
-
-		existeVehiculo(nroSerie);
-        // Comprobar si existe el vehiculo
-
         precioBaseValido(duracion);
 		precioBaseValido(distancia);
-		// Comprobar si el precio es valido
+		// Comprobar si la distancia y duracion son validas
 
-		// Comprobar que existe el usuario
+		DtFecha fecha=DtFecha(dia,mes,anio);
+		Usuario* usuario = obtenerUsuario(ci);
 
-		viajeB=DtViajeBase(duracion,distancia,fecha);
-		ingresarViaje(ci,nroSerie,viajeB);
+		//fechavalida(fecha,usuario);
+		// Comprobar si la fecha del viaje es posterior o igual a la fecha de ingreso del usuario
+
+		DtViajeBase viaje = DtViajeBase(duracion,distancia,fecha);
+		ingresarViaje(ci,nroSerieVehiculo,viaje);
 
 
-	}catch(invalid_argument& e){
+	}catch(std::invalid_argument& e){
 		cout << e.what() << endl;
 	}
 }
 
-void ingresarViaje(string ci, int nroSerieVehiculo, DtViajeBase& viajeB){
+void ingresarViaje(string ci, int nroSerieVehiculo, DtViajeBase& viaje){
 	try{
-		Usuario* usuario = obtenerUsuario(ci);
-		Vehiculo* vehiculo = obtenerVehiculo(nroSerie);
-		//usuario->ingresarViaje()
-		DtViaje* dtv = new DtViaje(vehiculo->darPrecioViaje(viajeB.getDuracion(),viajeB.getDistancia()),vehiculo);
-		Viaje v = new Viaje(dtv->getDuracion(),dtv->getDistancia(),viajeB.getFecha());
 
-	}catch(){
+
+		// obtener Usuario 
+		Usuario* usuario = obtenerUsuario(ci);
+
+		// Obtener Vehiculo
+		Vehiculo* vehiculo;// = obtenerVehiculo(nroSerieVehiculo);
+
+		// obtener dtVehiculo
+		 DtVehiculo* dtve;// = obtenerDtVehiculo(nroSerieVehiculo);
+
+		float precioViaje;
+
+		try{
+			Bicicleta& bici = dynamic_cast<Bicicleta&>(vehiculo);
+			precioViaje = bici.darPrecioViaje(viaje.getDuracion(),viaje.getDistancia());
+		}cast(bad_cast){
+			Monopatin& mono = dynamic_cast<Monopatin&>(vehiculo);
+			precioViaje = mono.darPrecioViaje(viaje.getDuracion(),viaje.getDistancia());
+		}
+
+		// Crear dtViaje
+		DtViaje* dviaje = new DtViaje(precioViaje,dtve,viaje);
+
+		// Crear Viaje
+		Viaje* viajea = new Viaje(viaje.getFecha(),viaje.getDuracion(),viaje.getDistancia());
+
+		//usuario->ingresarViaje()
+		//DtViaje* dtv = new DtViaje(vehiculo->darPrecioViaje(viajeB.getDuracion(),viajeB.getDistancia()),vehiculo));
+		//Viaje* v = new Viaje(dtv->getDuracion(),dtv->getDistancia(),viajeB.getFecha());
+
+	}catch(bad_cast){
 
 	}
 
 }
+
+
 
 //REVISADO EL MAIN
 
 
 int main(){
+
+	DtFecha fecha = DtFecha(25,8,2020);
+	Usuario u = Usuario("55213703","Mauricio",fecha);
+	Monopatin v = Monopatin(52617,50,100,true);
 
 	int opcion;
 

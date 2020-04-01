@@ -1,4 +1,7 @@
+#include <iostream>
 #include "DtViajeBase.h"
+
+using namespace std;
 
 DtViajeBase::DtViajeBase(){}
 DtViajeBase::DtViajeBase(int d,int n,DtFecha f){
@@ -25,4 +28,8 @@ void DtViajeBase::setFecha(DtFecha f){
 }
 DtFecha DtViajeBase::getFecha(){
 	return this->fecha;
+}
+ostream& operator <<(ostream& salida, DtViajeBase& dtc){
+	cout << "Fecha viaje: " << dtc.fecha << "/" << dtc.distancia << "/" << dtc.duracion <<endl;  //comentado porque no deja compilar 
+	return salida;
 }

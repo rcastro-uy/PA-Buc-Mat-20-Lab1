@@ -9,10 +9,11 @@ class DtVehiculo{
 		float precioBase;
 	public:
 		DtVehiculo();
+		DtVehiculo(int,float,float);
 		~DtVehiculo();
 		int getNroSerie();
 		float getPorcentajeBateria();
 		float getPrecioBase();
-
+		friend ostream& operator <<(ostream&,const DtVehiculo&);
 };
 #endif

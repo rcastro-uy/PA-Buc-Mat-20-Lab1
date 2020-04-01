@@ -1,9 +1,8 @@
 #include "DtViaje.h"
 #include "DtVehiculo.h"
-using namespace std;
 
     DtViaje::DtViaje(){}
-    DtViaje::DtViaje(float precioTotal,DtVehiculo vehiculo){
+    DtViaje::DtViaje(int d,int n,DtFecha f, float precioTotal,DtVehiculo* vehiculo):DtViajeBase(d,n,f){
         this->precioTotal=precioTotal;
         this->vehiculo=vehiculo;
     }
@@ -15,10 +14,10 @@ using namespace std;
     float DtViaje::getPrecioTotal(){
         return this->precioTotal;
     }
-    void DtViaje::setVehiculo(DtVehiculo vehiculo){
+    void DtViaje::setVehiculo(DtVehiculo* vehiculo){
         this->vehiculo=vehiculo;
     }
-    DtVehiculo DtViaje::getVehiculo(){
+    DtVehiculo* DtViaje::getVehiculo(){
         return this->vehiculo;
     }
 

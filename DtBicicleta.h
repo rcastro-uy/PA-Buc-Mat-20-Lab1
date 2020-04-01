@@ -18,6 +18,6 @@ class DtBicicleta: public DtVehiculo{
         void setCantCambios(int);
 
         ~DtBicicleta();
-        float darPrecioViaje(int,int);
+        friend ostream& operator <<(ostream&,DtBicicleta&);
 };
 #endif
