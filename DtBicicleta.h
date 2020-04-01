@@ -2,6 +2,7 @@
 #define DTBICICLETA
 #include "DtVehiculo.h"
 #include "TipoBici.h"
+#include <iostream>
 using namespace std;
 
 class DtBicicleta: public DtVehiculo{

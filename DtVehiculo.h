@@ -1,5 +1,6 @@
 #ifndef DTVEHICULO
 #define DTVEHICULO
+#include <iostream>
 using namespace std;
 
 class DtVehiculo{
