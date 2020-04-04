@@ -11,7 +11,7 @@ class DtBicicleta: public DtVehiculo{
         int cantCambios;
     public:
         DtBicicleta();
-        DtBicicleta(TipoBici,int);
+        DtBicicleta(int,float,float,TipoBici,int);
         
         TipoBici getTipoBici();
         void setTipoBici(TipoBici);

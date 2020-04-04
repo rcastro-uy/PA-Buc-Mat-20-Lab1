@@ -1,7 +1,7 @@
 #include "Bicicleta.h"
 
 Bicicleta::Bicicleta(){}
-Bicicleta::Bicicleta(TipoBici tipo,int cantCambios){
+Bicicleta::Bicicleta(int nroSerie,float porBateria,float precioBase,TipoBici tipo,int cantCambios):Vehiculo(nroSerie,porBateria,precioBase){
 	this->tipo=tipo;
 	this->cantCambios=cantCambios;
 }

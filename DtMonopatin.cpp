@@ -4,7 +4,7 @@
 using namespace std;
 
 DtMonopatin::DtMonopatin(){}
-DtMonopatin::DtMonopatin(bool b){
+DtMonopatin::DtMonopatin(int nroSerie,float porBateria,float precioBase,bool b):DtVehiculo(nroSerie,porBateria,precioBase){
     this->tieneLuces=b;
 }
 DtMonopatin::~DtMonopatin(){}
@@ -25,9 +25,9 @@ void DtMonopatin::setTieneLuces(bool b){
 ostream& operator <<(ostream& s,DtMonopatin& v){
     cout << (DtVehiculo) v;
     if(v.tieneLuces){
-        cout << " - Tiene luces: Si";
+        cout << " - Tiene luces: Si" << endl;
     }else{
-        cout << " - Tiene luces: No";
+        cout << " - Tiene luces: No" << endl;
     }
     return s;
 }

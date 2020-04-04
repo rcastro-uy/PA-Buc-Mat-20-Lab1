@@ -1,7 +1,10 @@
 #include "Monopatin.h"
 
 Monopatin::Monopatin(){}
-Monopatin::~Monopatin(){}
+
+Monopatin::Monopatin(int nroSerie,float porBateria,float precioViaje,bool v):Vehiculo(nroSerie,porBateria,precioViaje){
+	this->tieneLuces=v;
+}
 void Monopatin::setTieneLuces(bool f){
 	this->tieneLuces=f;
 }
@@ -18,3 +21,5 @@ float Monopatin::darPrecioViaje(int duracion, int distancia){
 	}
 	return precio;
 }
+
+Monopatin::~Monopatin(){}

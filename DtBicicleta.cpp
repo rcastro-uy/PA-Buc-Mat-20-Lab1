@@ -5,6 +5,11 @@ using namespace std;
 
 DtBicicleta::DtBicicleta(){}
 
+DtBicicleta::DtBicicleta(int nroSerie,float porBateria,float precioBase,TipoBici tb,int cambios):DtVehiculo(nroSerie,porBateria,precioBase){
+    this->tipo=tb;
+    this->cantCambios=cambios;
+}
+
 DtBicicleta::~DtBicicleta(){}
 
 TipoBici DtBicicleta::getTipoBici(){
@@ -25,7 +30,7 @@ void DtBicicleta::setCantCambios(int c){
 
 ostream& operator <<(ostream& s,DtBicicleta& v){
     cout << (DtVehiculo) v;
-    cout << " - Tipo de Bicicleta: " << v.tipo;
-    cout << " - Cantidad de cambios: " << v.cantCambios; 
+    cout << " - Tipo de Bicicleta: " << v.tipo << endl;
+    cout << " - Cantidad de cambios: " << v.cantCambios << endl; 
     return s;
 }

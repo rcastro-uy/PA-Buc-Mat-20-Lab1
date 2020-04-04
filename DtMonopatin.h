@@ -8,7 +8,7 @@ class DtMonopatin : public DtVehiculo{
         bool tieneLuces;
     public:
         DtMonopatin();
-        DtMonopatin(bool);
+        DtMonopatin(int,float,float,bool);
 
         bool getTieneLuces();
         void setTieneLuces(bool);
